@@ -1,0 +1,118 @@
+html {
+  height:100%;
+}
+
+body {
+  background: url(../img/back.png);
+  height:100%;
+}
+
+input, textarea {
+  padding: 10px;
+  width: 285px;
+  font-size: 14px;
+  color: #555;
+  border: 1px #ddd solid;
+  -webkit-box-shadow: 0px 0px 8px #aaa;
+  -moz-box-shadow: 0px 0px 8px #aaa;
+  box-shadow: 0px 0px 8px #aaa;
+}
+
+#new-blog-content {
+  width:100%;
+  resize:vertical;
+  height:100px;
+  max-height:200px;
+}
+
+#blogs .blog-remove {
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background: url(../img/close-sprite.png) no-repeat 0 0;
+}
+
+#blogs .item:hover .blog-remove {
+  display: block;
+}
+
+#blogs .blog-remove:hover {
+  background-position: 0 -20px;
+}
+
+#appContainer {
+  margin-top:60px;
+}
+
+#appContainer .hero-unit {
+  padding:30px;
+}
+
+
+#create-blog {
+  max-width: 400px;
+}
+
+.right {
+  float:right !important;
+}
+
+ .row h2, .row p {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item {
+  padding:10px;
+  position:relative;
+}
+
+#blog-app {
+  margin-top: 30px;
+}
+
+#blogs .span3 {
+  display:none;
+  background: url("../img/bg.png");
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin-bottom:10px;
+  -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+  -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+}
+
+#blogs .span3:hover {
+  -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+  -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+  box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+}
+
+.blog-title {
+  cursor:pointer;
+  font-size:24px;
+  line-height:35px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.single .blog-title {
+  font-size:36px;
+}
+
+#blogs .item .blog-timestamp {
+  float:right;
+}
+
+.clear {
+  clear:both;
+}
+

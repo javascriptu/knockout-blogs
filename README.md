@@ -1,7 +1,7 @@
 JavascriptU Knockout Blogs
 ===========================
 
-## The RequireJS / Backbone Demo App For JavascriptU Workshop 4
+## The RequireJS / Knockout Demo App For JavascriptU Workshop 4
 
 For Presentation Purposes Only. Feel Free To Extend and Make it your own
 
