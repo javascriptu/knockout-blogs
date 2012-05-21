@@ -1,20 +1,6 @@
 
 define(["jquery","knockout","sammy","moment","template","localstorage"], function($, ko, Sammy, moment) {
 	
-	ko.extenders.relativeDate = function(target, precision) {
-		
-		var result = ko.computed({
-			read: target,
-			write: function(newValue) {
-				target("newval");
-			}
-		});
-		
-		result(target());
-		
-		return result;
-	}
-	
 	return function appViewModel() {
 		
 		var self = this;
