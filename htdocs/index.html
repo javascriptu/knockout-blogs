@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="utf-8">
-  <title>Backbone Blogs</title>
+  <title>Knockout Blogs</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Backbone Blogs Using RequireJS, Twitter Bootstrap and Backbone">
   <meta name="author" content="JavascriptU">
@@ -35,7 +35,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="#!/">Backbone-Blogs</a>
+      <a class="brand" href="#!/">Knockout-Blogs</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li class="">
@@ -50,13 +50,46 @@
 
 <div id="appContainer" class='container'>
   <div class="hero-unit" id="mainInner">
+	
+	<div data-bind="visible: activePage() == 'create'">
+	<h1><img src='assets/img/draft.png' />Blog</h1>
+	<p>This is a simple blog application built using <strong>Knockout</strong>, Sammy, jQuery, <strong>requireJS</strong>, Moment and Twitter Bootstrap.</p>
 
+	<div id="blog-app">
+	  <div id="create-blog">
+	    <form class='blog-form'>
+	      <input id="new-blog-title" placeholder="Blog Title" data-bind="value: blogTitle" type="text"/>
+	      <textarea id="new-blog-content" placeholder="Blog Body..." data-bind="value: blogEntry"></textarea>
+	      <input type='submit' class='' data-bind="click: save" value='Create Blog' />
+	    </form>
+	  </div>
+	</div>
+	</div>
+	
+	<div data-bind="visible: activePage() == 'single', template: {foreach: singleEntry}">
+		<div class='item'>
+		  <div class="blog-title" data-bind="text: title"></div>
+		  <p class="blog-content" data-bind="text: entry"></p>
+		  <p class="blog-timestamp" data-bind="text: moment(create).format($root.date)"></p>
+		  <span class="blog-remove"></span>
+		  <div class='clear'></div>
+		</div>
+	</div>
+	
   </div>
   <!-- Attach Blog Widget Here -->
-  <div id="blogs" class="row"></div>
-
+  <div id="blogs" class="row" data-bind="visible: activePage() == 'create'">
+  	<div class="blog-widget" data-bind="template: {foreach: blogEntries, afterAdd: showNewEntry}">
+		<div class="span3" style="display: block;">
+		<div class='item'>
+		  <div class="blog-title"><a data-bind="click: $root.viewPost, text: title"></a></div>
+		  <p class="blog-content" data-bind="text: entry"></p>
+		  <p class="blog-timestamp" data-bind="text: moment(create).fromNow()"></p>
+		  <span class="blog-remove" data-bind="click: $root.removeEntry"></span>
+		  <div class='clear'></div>
+		</div>
+  	</div>
   </div>
-
 
 </body>
 </html>

@@ -1,12 +1,12 @@
 <h1><img src='assets/img/draft.png' />Blog</h1>
-<p>This is a simple blog application built using <strong>Backbone</strong>, Underscore, jQuery, <strong>requireJS</strong>, Moment and Twitter Bootstrap.</p>
+<p>This is a simple blog application built using <strong>Knockout</strong>, Sammy, jQuery, <strong>requireJS</strong>, Moment and Twitter Bootstrap.</p>
 
 <div id="blog-app">
   <div id="create-blog">
     <form class='blog-form'>
-      <input id="new-blog-title" placeholder="Blog Title" type="text"/>
-      <textarea id="new-blog-content" placeholder="Blog Body..."></textarea>
-      <input type='submit' class='' value='Create Blog' />
+      <input id="new-blog-title" placeholder="Blog Title" data-bind="value: blogTitle" type="text"/>
+      <textarea id="new-blog-content" placeholder="Blog Body..." data-bind="value: blogEntry"></textarea>
+      <input type='submit' class='' data-bind="click: save" value='Create Blog' />
     </form>
   </div>
 
